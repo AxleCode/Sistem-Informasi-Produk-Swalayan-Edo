@@ -76,15 +76,19 @@ footer{
 	width: 80%;
 	margin:0 auto;
 
+
 }
 .container:after {
 	content: '';
 	display: block;
 	clear: both;
+
 }
 .section{
 	padding: 25px 0px ;
 	display: inline-block;
+	display: flex;
+	justify-content: right;
 }
 .boxdashboard{
 	background-color: white;
@@ -96,7 +100,6 @@ footer{
 }
 
 /* BAGIAN PROFIL */
-
 
 .submitprofil{
 	width: 100%;
@@ -121,24 +124,101 @@ footer{
 
 .containerprofil{
 	width: 80%;
-	margin:0 auto;
+	margin:35px ;
 	color: white;
 	font-size: 20px;
+	display: flex;
+	justify-content: right;
 }
-.boxprofil{
+.boxupdateprofil{
 	background-color: white;
 	border: 2px solid #ccc;
 	padding: 20px 20px 20px ;
 	box-sizing: border-box;
 	margin: 10px 0 25px 0;
 	width: 400px;
+	margin:20px ;
+
+}
+.boxgantipassprofil{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	width: 400px;
+	margin:20px ;
 }
 #bg-profil{
 	height: 100vh;
-	justify-content: center;
 
 }
 h3 {
 	color: green;
 	padding: 20px 0;
+}
+
+/* BAGIAN KATEGORI  */
+
+.tabelkategori{
+	width: 100%;
+	border-collapse: collapse;
+}
+.tabelkategori tr {
+	height: 30px;
+
+}
+.tabelkategori tr td {
+	padding: 15px 25px;
+}
+.btneditkategori{
+	width: 20%;
+	padding: 7px;
+	margin-bottom: 0px;
+	margin-left: 70px;
+	box-sizing: border-box;
+	background-color: #05E707 ;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 100%;
+	justify-content: left;
+	align-items: right;
+
+}
+.btntambahkategori{
+	width: 10%;
+	padding: 7px;
+	margin-bottom: 15px;
+	margin-left: 90%;
+	box-sizing: border-box;
+	background-color: #05E707 ;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 100%;
+
+}
+.boxdatakategori{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	width: 100%;
+	margin:20px ;
+}
+
+/* BAGIAN PRODUK  */
+
+.boxtambahproduk{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	width: 400px;
+	margin:20px ;
+	color: black;
+
 }
