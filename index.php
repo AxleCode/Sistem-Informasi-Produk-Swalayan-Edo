@@ -36,12 +36,17 @@
 		</div>
 	</div>
 
+	<div>
+		<img src="gambar/dashboard1.jpg" width="100%" >
+	</div>
+
 			
 	<!-- Kategori -->
 	<div class="sectionp">
 		<div class="containerp">
-			<h2 class="h2profil">Kategori</h2 >
+			
 			<div class="boxberanda">
+				<h2 class="h2kategori" >Kategori</h2 >
 				<?php 
 					$Kategori = mysqli_query($conn, "SELECT * FROM tabel_kategori ORDER BY 	kategori_id ASC");
 					if (mysqli_num_rows($Kategori) > 0) {
@@ -50,7 +55,7 @@
 				 ?>
 				<a href="produk.php?kat=<?php echo $k['kategori_id'] ?>">
 					<div class="col-5">
-						<img src="gambar produk/contoh.jpg" width="50px" style="margin-bottom: 5px ;" >
+						<img src="Kategori/<?php echo $k['kategori_gambar'] ?>" width="65px" style="margin-bottom: 5px" >
 						<p><?php echo $k['kategori_nama'] ?></p>
 					</div>
 				</a>
@@ -64,19 +69,19 @@
 	<!-- Produk Baru -->
 	<div class="section">
 		<div class="container">
-			<h3 class="h2profil">Produk Terbaru</h3>
+			<h3 class="h2beranda">Produk Terbaru</h3>
 			<div class="boxberanda">
 				<?php 
 
-					$produk = mysqli_query($conn, "SELECT * FROM tabel_product WHERE product_status = 1 ORDER BY product_id ASC LIMIT 8");
+					$produk = mysqli_query($conn, "SELECT * FROM tabel_product WHERE product_status = 1 ORDER BY product_id DESC LIMIT 8");
 					if (mysqli_num_rows($produk) > 0) {
 						while($p = mysqli_fetch_array($produk)){
 				 ?>
-				 <a href="detailproduk.php?id=<?php echo $p['product_id'] ?>">
+				 <a href="detailproduk.php?id=<?php echo $p['product_id'] ?> kat=<?php echo $p['kategori_id'] ?>">
 					<div class="col-4">
-						<img src="produk/<?php echo $p['product_image'] ?>">
+						<img src="produk/<?php echo $p['product_image'] ?>"  >
 						<p class="nama"><?php echo $p['product_nama'] ?></p>
-						<p class="harga">Rp. <?php echo $p['product_price'] ?></p>
+						<p class="harga">Rp. <?php echo number_format($p['product_price']) ?></p>
 					</div>
 					</a>
 				<?php }}else { ?>
