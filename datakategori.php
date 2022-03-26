@@ -18,7 +18,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head> 
-<body style="background-image: url(gambar/profil.jpg) ; background-size: cover;">
+<body style="background-image: url(gambar/profil.jpg) ; ">
 	<!-- Bagian Header -->
 	<header>
 		<div class="container">
@@ -45,6 +45,7 @@
 						<tr>
 							<th width="50px">ID</th>
 							<th>Kategori</th>
+							<th>Gambar</th>
 							<th width="400px">Aksi</th>
 						</tr>
 					</thead>
@@ -52,18 +53,23 @@
 						<?php 
 						$no = 1;
 							$kategori = mysqli_query($conn, "SELECT * FROM tabel_kategori ORDER BY kategori_id ASC");
+								if(mysqli_num_rows($kategori) > 0){
 								while($row = mysqli_fetch_array($kategori)){
 						 ?>
 						<tr>
 							<td><?php echo $row['kategori_id'] ?></td>
 							<td><?php echo $row['kategori_nama'] ?></td>
+							<td><a href="kategori/<?php echo $row['kategori_gambar'] ?>" target="_blank"> <img src="kategori/<?php echo $row['kategori_gambar'] ?>" width="100px"></a></td>
 							<td>
 								<a href="editkategori.php?id=<?php echo $row['kategori_id'] ?>"><input type="submit" name="updatepass" value="Edit" class="btneditkategori"></a> <a href="hapuskategori.php?idk=<?php echo $row['kategori_id'] ?>" onclick="return confirm('Yakin Ingin Hapus ?')"><input type="submit" name="updatepass" value="Hapus" class="btneditkategori"></a>
 							</td>
 						</tr>
-						<?php 
-					} 
-						?>
+						<?php }} else{ ?>
+						<tr>
+							<td colspan="4">Tidak Ada Data</td>
+						</tr>
+						<?php } ?>
+					
 					</tbody>
 				</table>
 			</div>
