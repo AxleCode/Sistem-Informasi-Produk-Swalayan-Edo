@@ -43,17 +43,53 @@
 		<div class="containerprofil">
 			<div class="boxupdateprofil">
 				<h3>Edit Data Kategori</h3 >
-				<form action="" method="POST">
+				<form action="" method="POST" enctype="multipart/form-data">
 					<input type="text" name="nama" placeholder="Nama Kategori" class="inputprofil" value="<?php echo $k-> kategori_nama ?>"required>
+					<img src="kategori/<?php echo $k->kategori_gambar ?>" width="200px">
+					<input type="hidden" name="foto" value="<?php echo $k->kategori_gambar ?>">
+					<input type="file" name="gambar" class="input-control" >
 					<input type="submit" name="submit" value="Edit Kategori" class="submitprofil">
 				</form>
 				<?php 
 					if (isset($_POST['submit'])){
 						$nama = ucwords($_POST['nama']);
+						$foto = $_POST['foto'];
+
+						$filename	= $_FILES['gambar']['name'];
+						$tmp_name	= $_FILES['gambar']['tmp_name'];
+
+						//jika admin ganti gambar 
+						if ($filename != '') {
+	
+							$type1 		= explode('.', $filename);
+							$type2 		= $type1[1]; 
+
+							$ubahnama = 'produk'.time().'.'.$type2;
+							$tipe_diizinkan = array('jpg','jpeg','png','gif');
+
+							//Validasi format file
+							if (!in_array($type2, $tipe_diizinkan)) {
+								//Jika format file tidak ada di dalam tipe diizinkan
+								echo '<script>alert("Format File yang diizinkan hanya JPG, PNG, JPEG, GIF")</script>';
+							
+							}else{
+								unlink('./kategori/'.$foto);
+								echo 'Berhasil Diupload';
+								move_uploaded_file($tmp_name, './kategori/'.$ubahnama);
+								$namagambar = $ubahnama;
+							}
+
+						}else{
+							//jika admin tidak ganti gambar
+							$namagambar = $foto;
+
+						}
 
 						$update = mysqli_query($conn, "UPDATE tabel_kategori SET
-												kategori_nama = '".$nama."'
-												WHERE kategori_id = '".$k->kategori_id."' ");
+												kategori_nama = '".$nama."',
+												kategori_gambar = '".$namagambar."'
+												WHERE kategori_id = '".$k->kategori_id."' 
+												");
 
 						if ($update) {
 							echo '<script>alert("Edit Data Kategori Berhasil!")"</script>';
