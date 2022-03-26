@@ -71,6 +71,8 @@ header ul li a{
 }
 footer{
 	padding: 20px 0;
+	background-color: #333;
+	color: #fff;
 }
 .container{
 	width: 80%;
@@ -221,4 +223,189 @@ h3 {
 	margin:20px ;
 	color: black;
 
+}
+
+/* BAGIAN BERANDA  */
+.search{
+	padding: 15px 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.search input[type=text]{
+	width: 50%;
+	padding: 10px;
+}
+.search input[type=submit]{
+	padding: 11px ;
+	background-color: #05E707;
+	color: white ;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+.h2beranda{
+	color: green;
+	padding: 10px 0;
+	margin-bottom: 120px;
+	font-size: 30px;
+}
+
+.h2kategori{
+	color: green;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+
+.sectionp {
+	padding: 25px 0px ;
+	display: inline-block;
+	display: flex;
+	justify-content: right;
+}
+
+.containerp{
+	width: 80%;
+	margin:0 auto;
+
+
+}
+.containerp:after {
+	content: '';
+	display: block;
+	clear: both;
+
+}
+.boxberanda{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	margin-top: -110px;
+}
+.boxberanda:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.h2profil{
+	color: green;
+	padding: 10px 0;
+	font-size: 30px;
+}
+.col-5{
+	width: 20%;
+	height: 100px;
+	margin-bottom: 20px;
+	text-align: center;
+	float: left;
+	box-sizing: border-box;
+}
+.col-5:hover{
+	box-shadow: 0 0 3px #999;
+}
+
+.col-4{
+	width: 25%;
+	height: 320px;
+	float: left;
+	padding: 10px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+.col-4:hover{
+	box-shadow: 0 0 3px #999;
+}
+.col-4 img{
+	width: 200px;
+	float: center;
+	resize: both;
+}
+.col-4 .nama{
+	color: #666;
+	margin: 5px;
+}
+.col-4 .harga{
+	font-weight: bold;
+	color: ;
+	float: right;
+	font-size: 20px;
+}
+.produk{
+	font-weight: 300;
+	font-size: 18px;
+}
+
+/* BAGIAN KONTAK  */
+h4 {
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.boxkontak{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	width: 100%;
+}
+.imgalamat{
+	width: 800px;
+	margin-top: 25px ;
+	float: center;
+
+}
+
+/* DETAIL PRODUK  */
+.boxdetailp{
+	background-color: white;
+	border: 2px solid #ccc;
+	padding: 20px 20px 20px ;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+	margin-top: 10px;
+}
+.boxdetailp:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.col-2{
+	width: 50%;
+	min-height: 200px;
+	padding: 10px;
+	box-sizing: border-box;
+	float: left;
+}
+.col-2 h2{
+	margin-bottom: 10px;
+}
+.col-2 h3{
+	color: #FF6646;
+	font-size: 36px;
+}
+.col-2 p {
+	margin: 15px 0;
+	text-align: justify;
+	line-height: 20px;
+	font-size: 16px;
+}
+
+@media screen and (max-width: 768px){
+	.container{
+		width: 90%;
+	}
+	.col-5 {
+		width: 50%;
+		margin-bottom: 10px;
+	}
+	.col-4{
+		width: 50%;
+		height: 300px;
+	}
+	.col-2{
+		width: 100%;
+	}
 }
